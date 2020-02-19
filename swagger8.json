@@ -1,0 +1,149 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.0",
+    "title": "ThirdAPI",
+    "description": "This is Third API"
+  },
+  "host": "dummy.restapiexample.com",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/employees": {
+      "get": {
+        "tags": [
+          "infa1"
+        ],
+        "summary": "get all employees detail",
+        "operationId": "getEmployees",
+        "description": "Get All Employees Detail -- user\n",
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/employee/{id}": {
+      "get": {
+        "tags": [
+          "infa2"
+        ],
+        "summary": "Get a single employee data",
+        "operationId": "getEmployee",
+        "description": "Get user Detail by Giving EMP ID -- Admin\n",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "user id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/create": {
+      "post": {
+        "tags": [
+          "infa3"
+        ],
+        "summary": "Create a single employee data",
+        "operationId": "createEmployee",
+        "description": "Get user Detail by Giving USER ID -- Admin\n",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "The user to create.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "salary": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/update/{id}": {
+      "put": {
+        "description": "Update employee record",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "user id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "user",
+            "description": "The user to create.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "salary": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
