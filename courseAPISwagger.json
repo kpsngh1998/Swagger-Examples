@@ -1,0 +1,145 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.0",
+    "title": "CourseAPI",
+    "description": "This is Course API"
+  },
+  "host": "localhost:4000",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/courses": {
+      "get": {
+        "summary": "get all course detail",
+        "operationId": "getAllCourses",
+        "description": "Get All Employees Detail -- user\n",
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      },
+      "post": {
+        "summary": "add a course",
+        "operationId": "addCourse",
+        "description": "Add a course in existing list",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "course",
+            "schema": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/course/{id}": {
+      "get": {
+        "summary": "Get detail about a course",
+        "operationId": "getCourseById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "courseid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      },
+      "put": {
+        "summary": "update a course",
+        "operationId": "updateCourseById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "courseid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "course",
+            "schema": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a course",
+        "operationId": "deleteCourseById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "courseid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    }
+  }
+}
