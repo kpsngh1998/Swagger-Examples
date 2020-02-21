@@ -5,7 +5,7 @@
     "title": "CourseAPI",
     "description": "This is Course API"
   },
-  "host": "localhost:4000",
+  "host": "10.80.112.82:4000",
   "schemes": [
     "http"
   ],
