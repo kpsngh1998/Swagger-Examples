@@ -81,8 +81,6 @@ paths:
   /delete/{id}:
       delete:
         operationId: deleteEmployeeDELETE
-        consumes:
-        - application/json
         parameters:
           - in: path
             name: id
