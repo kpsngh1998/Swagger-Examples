@@ -1,0 +1,192 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.0",
+    "title": "EmployeeAPI",
+    "description": "This is Employee API"
+  },
+  "host": "dummy.restapiexample.com",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/employees": {
+      "get": {
+        "operationId": "getEmployeesGET",
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          }
+        }
+      }
+    },
+    "/employee/{id}": {
+      "get": {
+        "operationId": "getEmployeeGET",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/create": {
+      "post": {
+        "operationId": "createEmployeePOST",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Employee",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "salary": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/update/{id}": {
+      "put": {
+        "operationId": "updateEmployeePUT",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Employee",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "salary": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/delete/{id}": {
+      "delete": {
+        "operationId": "deleteEmployeeDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/containAll": {
+      "post": {
+        "operationId": "allCasePOST",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Employee",
+            "schema": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "salary": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "in": "path",
+            "name": "employeeId",
+            "description": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "employeeName",
+            "description": "employeeName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
