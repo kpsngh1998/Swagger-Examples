@@ -185,6 +185,12 @@
             "name": "Content-Type",
             "type": "string",
             "default": "application/json"
+          },
+          {
+            "in": "header",
+            "name": "headerKey",
+            "type": "string",
+            "default": "headerValue"
           }
         ],
         "responses": {
