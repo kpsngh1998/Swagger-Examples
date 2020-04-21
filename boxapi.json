@@ -1,0 +1,25 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.0",
+    "title": "CourseAPI",
+    "description": "This is Course API"
+  },
+  "host": "api.box.com",
+  "basePath": "/2.0/folders",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/0": {
+      "get": {
+        "operationId": "getFolders",
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          }
+        }
+      }
+    }
+  }
+}
