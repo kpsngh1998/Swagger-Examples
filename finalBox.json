@@ -8,7 +8,7 @@
   "host": "api.box.com",
   "basePath": "/2.0/folders",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/{id}": {
