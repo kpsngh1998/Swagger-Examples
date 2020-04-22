@@ -71,7 +71,7 @@
         "name": {
           "type": "string"
         },
-        "schema": {
+        "parent": {
           "$ref": "#/definitions/Name"
         }
       }
