@@ -1,0 +1,88 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.0",
+    "title": "BoxAPI",
+    "description": "These are the various BOX REST APIs"
+  },
+  "host": "api.box.com",
+  "basePath": "/2.0/folders",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/{id}": {
+      "get": {
+        "operationId": "getFolders",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "default": "application/json",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          }
+        }
+      }
+    },
+    "/": {
+      "post": {
+        "operationId": "createFolder",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "requestBody",
+            "schema": {
+              "$ref": "#/definitions/Box"
+            }
+          },
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "default": "application/json",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successfully created"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Box": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "schema": {
+          "$ref": "#/definitions/Name"
+        }
+      }
+    },
+    "Name": {
+      "type": "string",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
