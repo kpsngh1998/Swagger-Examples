@@ -1,0 +1,57 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Uber API",
+    "version": "1.0.0"
+  },
+  "host": "api.uber.com",
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/v1",
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/products": {
+      "post": {
+        "summary": "Product Types",
+        "parameters": [
+          {
+            "name": "latitude",
+            "in": "body",
+            "description": "Latitude component of location.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "tags": [
+          "Products"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of products"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "product_id": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "string"
+        },
+        "parent_product": {
+          "$ref": "#/definitions/Product"
+        }
+      }
+    }
+  }
+}
