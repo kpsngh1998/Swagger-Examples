@@ -1,0 +1,128 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.0",
+    "title": "CourseAPI",
+    "description": "This is Course API"
+  },
+  "host": "localhost:4000",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/courses": {
+      "get": {
+        "operationId": "getEmployees",
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          }
+        }
+      },
+      "post": {
+        "operationId": "addEmployee",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "course",
+            "schema": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "in": "path",
+            "name": "id1",
+            "description": "courseid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "id2",
+            "description": "courseid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "header1",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/course/{id}": {
+      "post": {
+        "operationId": "updateEmployee",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "courseid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "course",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Course": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "schema": {
+          "$ref": "#/definitions/Course"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "Name": {
+      "type": "string",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
