@@ -1,0 +1,50 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.0",
+    "title": "Simple API"
+  },
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "abc",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "service",
+            "schema": {
+              "$ref": "#/definitions/account"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "service": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "account": {
+          "$ref": "#/definitions/account"
+        }
+      }
+    },
+    "account": {
+      "properties": {
+        "services": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/service"
+          }
+        }
+      }
+    }
+  }
+}
