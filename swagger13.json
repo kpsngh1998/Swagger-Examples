@@ -1,0 +1,164 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.0",
+    "title": "EmployeeAPI",
+    "description": "This is Employee API"
+  },
+  "host": "dummy.restapiexample.com",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/create": {
+      "post": {
+        "operationId": "createEmployeePOST",
+        "consumes": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Employee",
+            "schema": {
+              "type": "object",
+              "xml": {
+                "name": "XmlRoot"
+              },
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "salary": {
+                  "type": "string"
+                },
+                "parent": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "rollno": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "branch": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name1": {
+                        "type": "string"
+                      },
+                      "name2": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "branch2": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "salary": {
+                        "type": "string"
+                      },
+                      "parent": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "rollno": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "branch3": {
+                  "$ref": "#/definitions/Employee"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Employee": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "salary": {
+          "type": "string"
+        },
+        "parent": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "rollno": {
+              "type": "string"
+            }
+          }
+        },
+        "branchUnderRef": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name1": {
+                "type": "string"
+              },
+              "name2": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "branch2UnderRef": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "salary": {
+                "type": "string"
+              },
+              "parent": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "rollno": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
