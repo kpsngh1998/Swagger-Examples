@@ -15,6 +15,7 @@
       "post": {
         "operationId": "createEmployeePOST",
         "consumes": [
+          "application/json",
           "application/xml"
         ],
         "parameters": [
