@@ -1,0 +1,25 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.0",
+    "title": "EmployeeAPI",
+    "description": "This is Employee API"
+  },
+  "host": "api.twitter.com",
+  "basePath": "/1.1/lists",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/list.json": {
+      "get": {
+        "operationId": "getList",
+        "responses": {
+          "200": {
+            "description": "this is working"
+          }
+        }
+      }
+    }
+  }
+}
