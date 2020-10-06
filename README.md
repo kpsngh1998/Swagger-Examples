@@ -1,2 +1,2 @@
-# Swagger-Examples
-Swagger Files
+# Swagger
+Sample swagger files
