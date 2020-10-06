@@ -1,2 +1,2 @@
 # Swagger
-Sample swagger files
+Sample swagger files (swagger 2.0)
