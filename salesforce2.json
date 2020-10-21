@@ -1,0 +1,46 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.0",
+    "title": "SalesforceAPI",
+    "description": "This is a salesforce API"
+  },
+  "host": "ap16.salesforce.com",
+  "basePath": "/services/data",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v37.0/sobjects": {
+      "get": {
+        "operationId": "getSalesforceObject",
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          }
+        }
+      }
+    }, 
+   "/v48.0/limits/": {
+      "get": {
+       "operationId": "listOrganisationLimits",
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          }
+        }
+      }
+   }, 
+   "/v26.0/": {
+      "get": {
+       "operationId": "listAvailableRestResources",
+        "responses": {
+          "200": {
+            "description": "successfully searched"
+          }
+        }
+      }
+   }
+  }
+}
+
