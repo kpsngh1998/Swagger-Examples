@@ -1,0 +1,41 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "Process1-10"
+  },
+  "host" : "na1.ai.dm-us.informaticacloud.com:443",
+  "basePath" : "/active-bpel/public/rt/24AZ0afhxu9kQPsAiECNUN",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/Process1-10" : {
+      "get" : {
+        "description" : "",
+        "operationId" : "Process1-10Operation",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "schema" : {
+              "$ref" : "#/definitions/Process1-10Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Process1-10Response" : {
+      "type" : "object",
+      "properties" : {
+        "stream_out" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "Process110Response"
+      }
+    }
+  }
+}
