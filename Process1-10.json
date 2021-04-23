@@ -23,6 +23,22 @@
           }
         }
       }
+    },
+	"/Process2-10" : {
+      "post" : {
+        "description" : "",
+        "operationId" : "Process1-10Operation",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "schema" : {
+              "$ref" : "#/definitions/Process1-10Response"
+            }
+          }
+        }
+      }
     }
   },
   "definitions" : {
